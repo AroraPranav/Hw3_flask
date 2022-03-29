@@ -1,6 +1,13 @@
 <!DOCTYPE html>
 <body>
-    {% with messages = get_flashed_messages() %} {% if messages %} <ul class=flashes> {% for message in messages %} <li>{{ message }}</li> {% endfor %} </ul> {% endif %} {% endwith %}
+    {% with messages = get_flashed_messages() %}
+     {% if messages %} 
+     <ul class=flashes> 
+         {% for message in messages %} 
+         <li>{{ message }}</li> 
+         {% endfor %} 
+    </ul> 
+    {% endif %} {% endwith %}
     <h1>Welcome {{name}}</h1>
     <a href="https://www.google.com/">not google</a>
 
@@ -12,7 +19,7 @@
         {%endfor%}
     </ul>
     
-    <form> <label for="cname">City Name</label><br>
+    <form action="/add" method="POST"> <label for="cname">City Name</label><br>
         <input type="text" id="cname" name="cname" maxlength="32"><br>
         <input type="submit">
     </form>
